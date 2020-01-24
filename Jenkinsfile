@@ -1,20 +1,14 @@
 pipeline {
-    agent any
-    stages {
-        stage('---clean---') {
-            steps {
-                sh "mvn clean"
-            }
-        }
-        stage('--test--') {
-            steps {
-                sh "mvn test"
-            }
-        }
-        stage('--package--') {
-            steps {
-                sh "mvn package"
-            }
-        }
+  agent any 
+  stages {
+    stage(‘Build’) {
+      steps {
+        sh ‘echo “Hello World”’
+        sh ‘“
+                  echo “Multiline shell steps works too”
+                  ls -lah
+               “‘
+      }
     }
+  }
 }
